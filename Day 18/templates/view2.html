@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>view</title>
+</head>
+<body>
+   my Edit :--{{msg}}
+        <table border="5">
+                <thead>
+                 
+                      <tr>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>E-mail</th>
+                        <th>Phone Number</th>
+                        <th>Hire Date</th>
+                        <th>Job ID</th>
+                        <th>Salary</th>
+                        <th>Department id</th>
+                      </tr>
+                    </thead>
+                      {% for row in rows %}
+                      <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                        <td>{{row[6]}}</td>
+                        <td>{{row[7]}}</td>
+                        <td>
+                
+
+                <td>
+                  <form action="/updateEmployee" method="POST">
+                    <input type="hidden" name="info" value="{{row[0]}}" />
+                    <input type="submit" value="list" />
+                  </form>
+                </td>
+
+                <td>
+                  <form action="/updateform" method="POST">
+                    <input type="hidden" name="id" value="{{row[0]}}" />
+                    <input type="submit" value="to edit i" />
+                  </form>
+                </td>
+                {% endfor %}
+        </table>
+          <br>
+        <a href="/">go back to home page</a>
+</body>
+</html>

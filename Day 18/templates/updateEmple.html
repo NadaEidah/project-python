@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Update Employee </title>
+  </head>
+  <body>
+    <form action="/updateEmployee" method="POST">
+      <label for="first_name">First Name</label>
+      <p><input type="text" name="first_name" /></p>
+     
+      <label for="email">Email</label>
+      <p><input type="text" name="email" /></p>
+
+      <label for="phone_number">Phone Number</label>
+      <p><input type="text" name="phone_number" /></p>
+
+      <label for="hire_data">Hire Date</label>
+      <p><input type="text" name="hire_data" /></p>
+
+      <label for="job_id">Job ID</label>
+      <p><input type="text" name="job_id" /></p>
+
+      <label for="salary">Salary</label>
+      <p><input type="text" name="salary" /></p>
+
+      <label for="department_id">department id</label>
+      <p><input type="text" name="department_id" /></p>
+
+      <input type="hidden" name="id" value="{{allInfo[0]}}" />
+      <input type="submit" value="update" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>view</title>
+</head>
+<body>
+        <table border="5">
+                <thead>
+                  <td>id</td>
+                  <td>department name</td>
+                  <td>location</td>
+                </thead>
+                {% for row in rows %}
+                <tr>
+                  <td>{{ row["department_id"]}}</td>
+                  <td>{{ row["department_name"]}}</td>
+                  <td>{{ row["location_id"]}}</td>
+                  <td>
+                    <form action="/viewEmployee" method="POST">
+                      <input type="hidden" name="info" value="{{row[0]}}" />
+                      <input type="submit" value="Info" />
+                    </form>
+                  </td>
+                </tr>
+                {% endfor %}
+        </table>
+          <br>
+        <a href="/">go back to home page</a>
+</body>
+</html>
